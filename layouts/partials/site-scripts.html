@@ -1,0 +1,4 @@
+{{ $nav := resources.Get "js/nav.js" }}
+{{ $defaultJS := slice $nav | resources.Concat "js/global.js" }}
+{{ $globalJS := $defaultJS | resources.Fingerprint }}
+<script src="{{ $globalJS.Permalink }}"></script>

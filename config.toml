@@ -1,0 +1,7 @@
+baseURL = "https://garagesnumeriques.netlify.com/"
+languageCode = "en-US"
+title = "Les Garages Numériques"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+    description = "Digital art festival in Brussels"

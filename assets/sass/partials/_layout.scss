@@ -1,0 +1,27 @@
+
+::selection {
+	color:white;
+	background-color: $red;
+}
+
+html, body {
+    overflow-x:hidden;
+}
+
+body {
+    @include ff-r; 
+    font-size:18px;
+    font-weight:400;
+    line-height:1.5;
+    background-color: white;
+    color:$blue;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height:100%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.site-wrapper {
+    position:relative;
+}

@@ -1,0 +1,39 @@
+$blue:#0000ff;
+$red:#ff3000;
+
+$mw: 1400px; // max-width
+
+$su: 20px; // spacing-unit
+
+
+@font-face {
+    font-family: "Neue-Machina";
+    src:url('../assets/fonts/NeueMachina-Regular.woff2') format('woff2'),
+        url('../assets/fonts/NeueMachina-Regular.woff') format('woff');
+    unicode-range:U+0020-007F,U+00A0-00FF;
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: "Neue-Machina ultra bold";
+    src:url('../assets/fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
+        url('../assets/fonts/NeueMachina-Ultrabold.woff') format('woff');
+    unicode-range:U+0020-007F,U+00A0-00FF;
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+@import 'partials/_reset';
+@import 'partials/_mixins';
+@import 'partials/_animations';
+@import 'partials/_layout';
+@import 'partials/_typo';
+@import 'partials/_header';
+@import 'partials/_nav';
+@import 'partials/_footer';
+@import 'partials/_home';
+@import 'partials/_single';
+@import 'partials/_modules';

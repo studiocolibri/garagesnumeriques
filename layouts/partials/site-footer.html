@@ -1,0 +1,17 @@
+<footer class="site-footer">
+	<p>Garages numériques</p>
+</footer>
+
+<script>
+	var sixthBar = document.getElementById('sixth-bar'),
+		isFirstAnimTerminated = false;
+
+	sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
+	sixthBar.addEventListener("animationend", launchBlueBar); 
+
+	function launchBlueBar() {
+		if (!isFirstAnimTerminated) {
+			sixthBar.classList.add('bluebar');
+		}
+	}
+</script>
