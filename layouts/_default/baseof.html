@@ -33,59 +33,7 @@
     </div>
     
     <script>
-      window.onload = function() {
-    
-        // VIDEO BG
-            /*var min = 1,
-                max = 5,
-          random = Math.floor(Math.random() * (+max - +min)) + +min; */
-          
-            var videlem = document.createElement("video"),
-                sourceMP4 = document.createElement("source"),
-                supportsVideoElement = !!document.createElement('video').canPlayType,
-                temp = document.createElement('video'),
-                canPlay_MP4 = temp.canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),
-                canPlay_WEMB = temp.canPlayType('video/webm; codecs="vp8,vorbis"'),
-                videoWrapper = document.getElementById('video-wrapper');
-            
-            videlem.id = "video-bg";    
-            sourceMP4.type = "video/mp4";
-            sourceMP4.src = "/assets/videos/garages-numeriques-homepage-loop.mp4";
-            videlem.appendChild(sourceMP4);
-            videlem.preload = true;
-            videlem.autoplay = true;
-            videlem.muted = true;
-            videlem.loop = true;
-        videlem.setAttribute('playsinline', '');
-        videoWrapper.appendChild(videlem);
-        videlem.onloadeddata = function() {
-          logoAnim();
-        }; 
-        
-        // LOGO ANIM
-        function logoAnim() {
-          var sixthBar = document.getElementById('sixth-bar'),
-          isFirstAnimTerminated = false,
-          siteLogoTextSpans = document.querySelectorAll('.site-logo__text__span'),
-          siteLogoBars = document.querySelectorAll('.site-logo__bar');
-    
-          for (var i=0; i<siteLogoTextSpans.length; i++) {
-            siteLogoTextSpans[i].classList.add('animated');
-          }
-          for (var i=0; i<siteLogoBars.length; i++) {
-            siteLogoBars[i].classList.add('animated');
-          }
-    
-          sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
-          sixthBar.addEventListener("animationend", launchBlueBar); 
-    
-          function launchBlueBar() {
-            if (!isFirstAnimTerminated) {
-              sixthBar.classList.add('bluebar');
-            }
-          }
-        }
-      }
+      window.onload=function(){var e=document.createElement("video"),t=document.createElement("source"),a=(document.createElement("video").canPlayType,document.createElement("video")),n=(a.canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),a.canPlayType('video/webm; codecs="vp8,vorbis"'),document.getElementById("video-wrapper"));e.id="video-bg",t.type="video/mp4",t.src="/assets/videos/garages-numeriques-homepage-loop.mp4",e.appendChild(t),e.preload=!0,e.autoplay=!0,e.muted=!0,e.loop=!0,e.setAttribute("playsinline",""),n.appendChild(e),e.onloadeddata=function(){!function(){for(var e=document.getElementById("sixth-bar"),t=!1,a=document.querySelectorAll(".site-logo__text__span"),n=document.querySelectorAll(".site-logo__bar"),d=0;d<a.length;d++)a[d].classList.add("animated");for(var d=0;d<n.length;d++)n[d].classList.add("animated");function o(){t||e.classList.add("bluebar")}e.addEventListener("webkitAnimationEnd",o),e.addEventListener("animationend",o)}()}};
     </script>
   </body>
 </html>
