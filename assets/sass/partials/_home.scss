@@ -22,3 +22,27 @@
     text-align:center;
     box-sizing: border-box;
 }
+
+#home-title {
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.home-title__txt {
+    text-align: center;
+    font-size: 22px;
+
+    @media screen and (min-width:400px) {
+      font-size:28px;
+    }
+
+    @media screen and (min-width:560px) {
+      font-size:36px;
+    }
+
+    span {
+      display:block;
+    }
+} 

@@ -33,11 +33,14 @@ $bars: one two three four five six;
     line-height: 1.1;
     overflow: hidden;
 
-    span {
+    &__span {
         transform:translateX(100%);
         display:block;
         letter-spacing:10px;
-        animation: showText 0.6s cubic-bezier(.16,.9,.76,.91) forwards;
+
+        &.animated {
+            animation: showText 0.6s cubic-bezier(.16,.9,.76,.91) forwards;
+        }
     }
 
     & span:nth-child(1) {
@@ -72,8 +75,11 @@ $bars: one two three four five six;
     margin-right:7.8%;
     margin-top: auto;
     transform:translateY(-#{$logoHeight});
-    animation:showbars ease-out forwards;
     z-index:4;
+    
+    &.animated {
+        animation:showbars ease-out forwards;
+    }
 
     &:last-of-type {
         margin-right:0;
@@ -95,7 +101,10 @@ $bars: one two three four five six;
         height:94%;
 
         &.bluebar {
-            animation:bluebar 2.5s ease-out forwards;
+            
+            &.animated {
+                animation:bluebar 2.5s ease-out forwards;
+            }
         }
     }
 }

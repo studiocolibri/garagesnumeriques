@@ -1,12 +1,17 @@
 {{ define "main" }}
     
-    <video autoplay muted loop id="video-bg">
-      <source src="{{.Site.BaseURL}}assets/videos/viviane-martin-loop.mp4" type="video/mp4">
-    </video>
+    <div id="video-wrapper"></div>
+    {{/*  <video autoplay muted loop playsinline id="video-bg">
+      <source id="video-source" type="video/mp4">
+    </video>  */}}
 
-    <section id="home-video">
-        <h3>Digital art festival</h3>
-        <p>I'm a paragraph, <a href="https://www.lesgaragesnumeriques.com">and I'm a link !</a></p>
+    <section id="home-title">
+        <h1 class="home-title__txt">
+          <span>Les Garages Numériques</span>
+          <span>Digital arts festival</span>
+          <span>7 Nov - 11 Nov 2019</span>
+          <span>Brussels - La Bourse</span>
+        </h1>
     </section>
 
 {{ end }}
