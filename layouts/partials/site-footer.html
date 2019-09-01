@@ -25,29 +25,33 @@
         videlem.autoplay = true;
         videlem.muted = true;
         videlem.loop = true;
-        videlem.setAttribute('playsinline', '');
+		videlem.setAttribute('playsinline', '');
 		videoWrapper.appendChild(videlem);
+		videlem.onloadeddata = function() {
+			logoAnim();
+		}; 
 		
 		// LOGO ANIM
-		var sixthBar = document.getElementById('sixth-bar'),
+		function logoAnim() {
+			var sixthBar = document.getElementById('sixth-bar'),
 			isFirstAnimTerminated = false,
 			siteLogoTextSpans = document.querySelectorAll('.site-logo__text__span'),
 			siteLogoBars = document.querySelectorAll('.site-logo__bar');
 
-		for (var i=0; i<siteLogoTextSpans.length; i++) {
-			siteLogoTextSpans[i].classList.add('animated');
-		}
-		for (var i=0; i<siteLogoBars.length; i++) {
-			siteLogoBars[i].classList.add('animated');
-		}
+			for (var i=0; i<siteLogoTextSpans.length; i++) {
+				siteLogoTextSpans[i].classList.add('animated');
+			}
+			for (var i=0; i<siteLogoBars.length; i++) {
+				siteLogoBars[i].classList.add('animated');
+			}
 
+			sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
+			sixthBar.addEventListener("animationend", launchBlueBar); 
 
-		sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
-		sixthBar.addEventListener("animationend", launchBlueBar); 
-
-		function launchBlueBar() {
-			if (!isFirstAnimTerminated) {
-				sixthBar.classList.add('bluebar');
+			function launchBlueBar() {
+				if (!isFirstAnimTerminated) {
+					sixthBar.classList.add('bluebar');
+				}
 			}
 		}
 	}
