@@ -4,12 +4,17 @@
 
 a {
     text-decoration: none;
-    color: $red;
-    transition: color 150ms ease-out, background-color 150ms ease-out ;
+    background-image: linear-gradient(red 0%,red 100%);
+    background-repeat: no-repeat;
+    background-size: 140% 3px;
+    background-position: 0px 100%;
+    transition: background-size 150ms ease-out;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 8px;
 
     &:hover, &:focus {
-        background-color: $red;
-        color:white;    
+        background-size: 100% 100%;    
     }
 }
 
@@ -19,3 +24,49 @@ a {
     left:-99999px;
     clip-path: polygon(0px 0px,0px 0px,0px 0px,0px 0px);
 }
+
+$steps: 10;
+
+.glitch {
+    position: relative;
+    letter-spacing: 0.01em;
+    transform: scale3d(1,1,1);
+    
+        &::before,
+        &::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            background: #0a1bbf;
+            color: white;
+            clip: rect(0, 900px, 0, 0);
+            width:100%;
+            right:0;
+            z-index:3;
+        }
+    
+        &::before {
+            left: 7px;
+            text-shadow: 1px 0 green;
+            animation: glitch-effect 3s infinite linear alternate-reverse;
+        }
+    
+        &::after {
+            left: 3px;
+            text-shadow: -1px 0 red;
+            animation: glitch-effect 2s infinite linear alternate-reverse;
+        }
+  }
+  
+  @keyframes glitch-effect{
+  
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip:rect(random(100)+px,9999px,random(100)+px,0);
+        }
+    }
+    
+  }

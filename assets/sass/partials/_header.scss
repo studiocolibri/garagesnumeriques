@@ -2,30 +2,39 @@
 * HEADER
 */
 
-$logoHeight: 200px;
+$logoWidth: 126px;
+$logoHeight: 146px;
 $delay:0.25s;
 $bars: one two three four five six;
 
 .site-header {
-    position:relative;
+    position: relative;
     top:0;
     height:$logoHeight;
     z-index:1;    
     display:flex;
-    justify-content: center;
-    padding:$su;
+    justify-content: flex-start;
+    width:100%;
+    padding:$su $su 0 $su;
     box-sizing: border-box;
+    
+    @media screen and (min-width:768px) {
+        position: absolute;
+        padding:$su*3 $su*3 0 $su*3;
+    }
 }
 
 .site-logo {
     position:relative;
-    width:10.5rem;
+    width:$logoWidth;
+    height: $logoHeight;
 }
 
 .site-logo__text {
     position:absolute;
     text-transform:uppercase;
     color:white;
+    font-size: 17px;
     top:0;
     left:0;
     margin:0;
@@ -71,8 +80,9 @@ $bars: one two three four five six;
     display:block;
     height:100%;
     background-color:$red;
-    width:8.866666%;
-    margin-right:7.8%;
+    width:11px;
+    height:90px;
+    margin-right:12px;
     margin-top: auto;
     transform:translateY(-#{$logoHeight});
     z-index:4;
@@ -85,20 +95,17 @@ $bars: one two three four five six;
         margin-right:0;
     }
 
-    &.one, &.two, &.three {
-        height:54%;
-    }
-
     &.four {
-        height:67%;
+        margin-bottom:12px;
     }
 
     &.five {
-        height:79%;
+        margin-bottom:30px;
     }
 
     &.six {
-        height:94%;
+        margin-bottom:49px;
+        margin-right: 0;
 
         &.bluebar {
             
@@ -114,6 +121,28 @@ $bars: one two three four five six;
     .site-logo__bar.#{$bar} { 
         animation-duration: ($i * 1.25) * $delay;
         animation-delay: $i * $delay;
+    }
+}
+
+.site-info {
+    color:white;
+    margin-left:auto;
+    
+    span {
+        font-size: 1.2rem;
+        line-height: 1.1;
+        display:block;
+        text-align:right;
+        text-transform: uppercase;
+    }
+
+    span:first-of-type {
+        font-weight: bold;
+    }
+
+    span:nth-child(2) {
+        margin-top:$su;
+        @include ff-r;
     }
 }
 
