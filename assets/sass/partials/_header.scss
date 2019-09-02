@@ -136,10 +136,6 @@ $bars: one two three four five six;
         text-transform: uppercase;
     }
 
-    span:first-of-type {
-        font-weight: bold;
-    }
-
     span:nth-child(2) {
         margin-top:$su;
         @include ff-r;
