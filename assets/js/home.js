@@ -67,14 +67,26 @@ window.onload = function() {
 
   // AGENDA
   var discoverBtn = document.getElementById('discover-btn'),
-      agendaSection = document.getElementById('home-agenda'),
-      agendaCloseBtn = document.getElementById('home-agenda__close-btn');
+  agendaSection = document.getElementById('home-agenda'),
+  agendaCloseBtn = document.getElementById('home-agenda__close-btn');
 
   discoverBtn.addEventListener('click', function() {
     agendaSection.classList.add('open');
-  })
+    document.body.classList.add('no-scroll');
+  });
 
   agendaCloseBtn.addEventListener('click', function() {
     agendaSection.classList.remove('open');
-  })
+    document.body.classList.remove('no-scroll');
+  });
+
+  document.addEventListener("keydown", keyDownTextField, false);
+
+  function keyDownTextField(e) {
+    var keyCode = e.keyCode;
+    if(keyCode==27) {
+      agendaSection.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    }
+  }
 }
