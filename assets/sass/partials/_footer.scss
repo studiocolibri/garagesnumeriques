@@ -75,14 +75,18 @@
 
 .site-footer__btn.button {
     display: inline-block;
-    margin-right: $su;
+    margin:$su 0 0 0;
     height:40px;
     transform: translateY(20px);
     transition:transform 150ms ease-out;
     
     @media screen and (min-width:400px) {
-        margin-left: auto;
+        margin:0 $su 0 auto;
         display:block;
+    }
+
+    @media screen and (min-width:768px) {
+        margin:0 $su*3 0 auto;
     }
 
     &:hover, &:focus {

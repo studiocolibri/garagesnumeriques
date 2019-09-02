@@ -58,6 +58,10 @@
 
 .home-title__h1 {
   margin: 0 0 $su 0;
+
+  @media screen and (min-width:768px) {
+    margin-left:$su*2;
+  }
 }
 
 .home-title__p {
@@ -84,5 +88,89 @@
 
   &.button:last-of-type {
     margin-right:0;
+  }
+}
+
+#home-agenda {
+  display:none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding:0 $su;
+  background-color:rgba(10, 26, 192, 0.93);
+  color: white;
+  z-index: 3;
+  overflow-x: none;
+  overflow-y: scroll;
+
+  &.open {
+    display:block;
+  }
+}
+
+.home-agenda__close-btn {
+  display: flex;
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: $su*4;
+
+  &:hover, &:focus {
+    cursor:pointer;
+
+    svg {
+      stroke:$red;
+    }
+  }
+
+  svg {
+    margin-left: auto;
+    padding: 1em;
+    transition:stroke 150ms ease-out;
+  }
+}
+
+.home-agenda__table {
+  max-width:940px;
+  margin:$su*5 auto $su auto;
+  display:block;
+  
+
+  @media screen and (min-width:768px) {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top:$su*7;
+  }
+
+  h2 {
+    margin:$su 0 $su 0;
+    border-bottom: 1px solid $red;
+  }
+
+  h3 {
+    margin:$su/2 0 0 0;
+  }
+
+  p {
+    margin:0;
+    font-size:1rem;
+    line-height:1.3;
+  }
+}
+
+.home-agenda__block {
+  width:100%;
+  margin-bottom:$su*2;
+
+  @media screen and (min-width:980px) {
+    width:calc(50% - 40px);
+
+    &:nth-child(odd) {
+      margin-right:40px;
+    }
   }
 }

@@ -44,7 +44,86 @@
     </div>
     
     <script>
-      window.onload=function(){var e=document.createElement("video"),t=document.createElement("source"),n=!!document.createElement("video").canPlayType,a=document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),d=document.getElementById("video-wrapper");n&&a?(e.id="video-bg",t.type="video/mp4",t.src="/assets/videos/garages-numeriques-homepage-loop.mp4",e.appendChild(t),e.preload=!0,e.autoplay=!0,e.muted=!0,e.loop=!0,e.setAttribute("playsinline",""),d.appendChild(e),e.onloadeddata=function(){o(i)}):o(i);var o=function(e){for(var t=document.getElementById("sixth-bar"),n=!1,a=document.querySelectorAll(".site-logo__text__span"),d=document.querySelectorAll(".site-logo__bar"),o=0;o<a.length;o++)a[o].classList.add("animated");for(o=0;o<d.length;o++)d[o].classList.add("animated");function i(){n||t.classList.add("bluebar")}t.addEventListener("webkitAnimationEnd",i),t.addEventListener("animationend",i),setTimeout(function(){e()},3e3)};function i(){document.getElementById("home-title__h1").classList.add("glitch")}};
+        window.onload = function() {
+          // VIDEO BG
+          /*var min = 1,
+                max = 5,
+                random = Math.floor(Math.random() * (+max - +min)) + +min; */
+            
+          var videlem = document.createElement("video"),
+              sourceMP4 = document.createElement("source"),
+              supportsVideoElement = !!document.createElement('video').canPlayType,
+              temp = document.createElement('video'),
+              canPlay_MP4 = temp.canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),
+              //canPlay_WEMB = temp.canPlayType('video/webm; codecs="vp8,vorbis"'),
+              videoWrapper = document.getElementById('video-wrapper');
+          
+          if (supportsVideoElement && canPlay_MP4) {
+            videlem.id = "video-bg";    
+            sourceMP4.type = "video/mp4";
+            sourceMP4.src = "/assets/videos/garages-numeriques-homepage-loop.mp4";
+            videlem.appendChild(sourceMP4);
+            videlem.preload = true;
+            videlem.autoplay = true;
+            videlem.muted = true;
+            videlem.loop = true;
+            videlem.setAttribute('playsinline', '');
+            videoWrapper.appendChild(videlem);
+            videlem.onloadeddata = function() {
+              logoAnim(launchGlitch);
+            }; 
+          } else {
+            logoAnim(launchGlitch);
+        
+          }
+        
+          // LOGO ANIM
+          var logoAnim = function(callback) {
+            var sixthBar = document.getElementById('sixth-bar'),
+            isFirstAnimTerminated = false,
+            siteLogoTextSpans = document.querySelectorAll('.site-logo__text__span'),
+            siteLogoBars = document.querySelectorAll('.site-logo__bar');
+        
+            for (var i=0; i<siteLogoTextSpans.length; i++) {
+              siteLogoTextSpans[i].classList.add('animated');
+            }
+            for (var i=0; i<siteLogoBars.length; i++) {
+              siteLogoBars[i].classList.add('animated');
+            }
+        
+            sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
+            sixthBar.addEventListener("animationend", launchBlueBar); 
+        
+            function launchBlueBar() {
+              if (!isFirstAnimTerminated) {
+                sixthBar.classList.add('bluebar');
+              }
+            }
+        
+            setTimeout( function(){
+              callback();
+            }, 3000 );
+          }
+        
+          // GLITCH
+          function launchGlitch() {
+            var homeTitle = document.getElementById('home-title__h1');
+            homeTitle.classList.add('glitch');
+          }
+        
+          // AGENDA
+          var discoverBtn = document.getElementById('discover-btn'),
+          agendaSection = document.getElementById('home-agenda'),
+          agendaCloseBtn = document.getElementById('home-agenda__close-btn');
+
+          discoverBtn.addEventListener('click', function() {
+            agendaSection.classList.add('open');
+          })
+
+          agendaCloseBtn.addEventListener('click', function() {
+            agendaSection.classList.remove('open');
+          })
+        }
     </script>
   </body>
 </html>

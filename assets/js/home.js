@@ -64,4 +64,17 @@ window.onload = function() {
     var homeTitle = document.getElementById('home-title__h1');
     homeTitle.classList.add('glitch');
   }
+
+  // AGENDA
+  var discoverBtn = document.getElementById('discover-btn'),
+      agendaSection = document.getElementById('home-agenda'),
+      agendaCloseBtn = document.getElementById('home-agenda__close-btn');
+
+  discoverBtn.addEventListener('click', function() {
+    agendaSection.classList.add('open');
+  })
+
+  agendaCloseBtn.addEventListener('click', function() {
+    agendaSection.classList.remove('open');
+  })
 }
