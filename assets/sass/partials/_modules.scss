@@ -12,10 +12,40 @@ a {
     display: block;
     padding-bottom: 5px;
     padding-top: 8px;
-    @include ff-b;
 
     &:hover, &:focus {
         background-size: 100% 90%;    
+    }
+}
+
+.button {
+    border:0.2em solid $red;
+    padding: 1em 1.2em;
+    color:white;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 0px 100%;
+    text-transform: uppercase;
+    font-size:0.8rem;
+    @include ff-b;
+
+    &:hover, &:focus {
+        cursor:pointer;
+        background-size: 100% 100%;
+    }
+
+    &--primary {
+        background-image: linear-gradient($red 0%,$red 100%);
+        background-color:$red;
+        transition: background-size 150ms ease-out, background-image 150ms ease-out;
+
+        &:hover, &:focus {
+            background-image: linear-gradient($dark-blue 0%,$dark-blue 100%);
+        }
+    }
+
+    &--secondary {
+        background-color:$dark-blue;
     }
 }
 

@@ -64,8 +64,25 @@
   margin: 0 0 $su/2 0;
 }
 
-.home-title__btn {
-  display: block;
-  font-size: 85%;
-  color:white;
+.home-title__btns {
+  display:flex;
+  margin-top:$su/2;
+  flex-direction: column;
+
+  @media screen and (min-width:460px) {
+    flex-direction: row;
+  }
+
+  .button {
+    display:block;
+    margin:0 0 $su/2 0;
+
+    @media screen and (min-width:460px) {
+      margin:0 $su 0 0;
+    }
+  }
+
+  &.button:last-of-type {
+    margin-right:0;
+  }
 }
