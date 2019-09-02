@@ -118,10 +118,15 @@
   display: flex;
   background: transparent;
   border: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: $su*4;
+  position: fixed;
+  right: $su/2;
+  top: $su/2;
+  padding:0;
+
+  @media screen and (min-width:768px) {
+    right:$su;
+    top:$su;
+  }
 
   &:hover, &:focus {
     cursor:pointer;
@@ -133,7 +138,7 @@
 
   svg {
     margin-left: auto;
-    padding: 1em;
+    padding: $su/2;
     transition:stroke 150ms ease-out;
   }
 }
