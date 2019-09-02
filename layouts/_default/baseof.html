@@ -43,12 +43,6 @@
       {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
     </div>
     
-    <div class="site-footer__bars">
-      <a target="_blank" href="https://www.facebook.com/lesgaragesnumeriques/" title="Facebook">F</a>
-      <a target="_blank" href="https://www.instagram.com/lesgaragesnumeriques/" title="Instagram">I</a>
-      <a target="_blank" href="mailto:dorian.meeus@undermynetwork.com" title="E-mail">@</a>
-    </div>
-    
     <script>
       window.onload=function(){var e=document.createElement("video"),t=document.createElement("source"),n=!!document.createElement("video").canPlayType,a=document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),d=document.getElementById("video-wrapper");n&&a?(e.id="video-bg",t.type="video/mp4",t.src="/assets/videos/garages-numeriques-homepage-loop.mp4",e.appendChild(t),e.preload=!0,e.autoplay=!0,e.muted=!0,e.loop=!0,e.setAttribute("playsinline",""),d.appendChild(e),e.onloadeddata=function(){o(i)}):o(i);var o=function(e){for(var t=document.getElementById("sixth-bar"),n=!1,a=document.querySelectorAll(".site-logo__text__span"),d=document.querySelectorAll(".site-logo__bar"),o=0;o<a.length;o++)a[o].classList.add("animated");for(o=0;o<d.length;o++)d[o].classList.add("animated");function i(){n||t.classList.add("bluebar")}t.addEventListener("webkitAnimationEnd",i),t.addEventListener("animationend",i),setTimeout(function(){e()},3e3)};function i(){document.getElementById("home-title__h1").classList.add("glitch")}};
     </script>

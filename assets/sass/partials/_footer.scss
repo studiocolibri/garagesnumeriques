@@ -6,67 +6,88 @@
     position: relative;
     z-index: 2;
     bottom: 0;
-    padding:0 0 $su 0;
+    padding:0;
     width:100%;
     box-sizing: border-box;
     margin-top:$su*1.5;
-
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
     @media screen and (min-width:400px) {
         padding-left:$su;
+        align-items: baseline;
     }
     
     @media screen and (min-width:768px) {
         position: absolute;
-        padding:0 0 $su*3 $su*3;
-        padding-left:$su*3;
+        padding:0 0 0 $su*3;
         margin-top:0;
+        flex-direction: row;
     }
+}
+
+.site-footer__copy {
+    display:flex;
+    flex-direction:column;
+    margin-top:$su;
     
-    p {
+    @media screen and (min-width:768px) {
+        flex-direction: row;
+        align-items:baseline;
+        height:1.4em;
+    }
+
+    p, .site-footer__social-links a {
         color: white;
         font-size: 0.8382rem;
         margin:0;
-        font-weight: bold;
+        @include ff-b;
         text-align: center;
 
         @media screen and (min-width:400px) {
             text-align: left;
         }
     }
-}
 
-.site-footer__bars {
-    display:none;
-    justify-content: flex-end;
-    position: absolute;
-    right: $su*3;
-    bottom: 0;
-    font-size: 1rem;
-    z-index:3;
-    overflow:hidden;
+    p {
+        margin-right:$su;
+    }
 
-    @media screen and (min-width:768px) {
+    .site-footer__social-links {
         display:flex;
-    } 
+        justify-content: center;
 
-    a {
-        display:block;
-        background-color:$red;
-        color:white;
-        padding:$su/2 $su/2;
-        text-align: center;
-        @include ff-b;
-        margin:0 $su/2;
-        width:1.2em;
-        height:40px;
-        transform:translateY(20px);
-        transition:transform 200ms ease-out;
+        @media screen and (min-width:400px) {
+            justify-content: flex-start;
+        }
+        
+        a {
+            margin-right: $su/2;
 
-        &:hover, &:focus {
-            background-size:auto;
-            transform:translateY(0);
+            &:last-of-type {
+                margin-right:0;
+            }
         }
     }
 }
 
+.site-footer__btn.button {
+    display: inline-block;
+    margin-right: $su;
+    height:40px;
+    transform: translateY(20px);
+    transition:transform 150ms ease-out;
+    
+    @media screen and (min-width:400px) {
+        margin-left: auto;
+        display:block;
+    }
+
+    &:hover, &:focus {
+        background-image: none;
+        transform:translateY(0);
+    }
+}
    
