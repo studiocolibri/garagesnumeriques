@@ -182,4 +182,14 @@
       margin-right:40px;
     }
   }
+
+  &--btn {
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .button {
+      display:block;
+    }
+  }
 }
