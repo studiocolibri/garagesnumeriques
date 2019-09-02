@@ -118,10 +118,12 @@
 
           discoverBtn.addEventListener('click', function() {
             agendaSection.classList.add('open');
+            document.body.classList.add('no-scroll');
           })
 
           agendaCloseBtn.addEventListener('click', function() {
             agendaSection.classList.remove('open');
+            document.body.classList.remove('no-scroll');
           })
         }
     </script>

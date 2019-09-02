@@ -24,6 +24,10 @@ body {
     scroll-behavior: smooth;
     box-sizing: border-box;
     background-color:$dark-blue;
+
+    &.no-scroll {
+        overflow:hidden;
+    }
 }
 
 .site-wrapper {
