@@ -5,3 +5,4 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
     description = "Digital arts festival - 7-11/11 - La Bourse Brussels"
+    author = "Studio Colibri"
