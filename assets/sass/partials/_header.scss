@@ -24,10 +24,16 @@ $bars: one two three four five six;
     }
 }
 
-.site-logo {
+a.site-logo {
     position:relative;
     width:$logoWidth;
     height: $logoHeight;
+    background-image:none;
+    padding:0;
+
+    &:hover, &:focus {
+        background-image:none;
+    }
 }
 
 .site-logo__text {
