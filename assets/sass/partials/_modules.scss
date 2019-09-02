@@ -15,7 +15,7 @@ a {
     @include ff-b;
 
     &:hover, &:focus {
-        background-size: 100% 100%;    
+        background-size: 100% 20%;    
     }
 }
 
@@ -26,7 +26,7 @@ a {
     clip-path: polygon(0px 0px,0px 0px,0px 0px,0px 0px);
 }
 
-$steps: 10;
+$steps: 5;
 
 .glitch {
     position: relative;
@@ -41,7 +41,7 @@ $steps: 10;
             left: 0;
             right: 0;
             overflow: hidden;
-            background: $dark-blue;
+            background: $glitch-blue;
             color: white;
             clip: rect(0, 900px, 0, 0);
             width:100%;
