@@ -35,7 +35,7 @@ a {
     }
 
     &--primary {
-        background-image: linear-gradient($red 0%,$red 100%);
+        background-image: linear-gradient($dark-blue 0%,$dark-blue 0%);
         background-color:$red;
         transition: background-size 150ms ease-out, background-image 150ms ease-out;
 
