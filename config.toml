@@ -1,4 +1,4 @@
-baseURL = "https://garagesnumeriques.netlify.com/"
+baseURL = "https://www.lesgaragesnumeriques.com/"
 languageCode = "en-US"
 title = "Les Garages Numériques"
 disableKinds = ["taxonomy", "taxonomyTerm"]
