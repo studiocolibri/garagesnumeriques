@@ -51,7 +51,6 @@ a.site-logo {
     &__span {
         transform:translateX(100%);
         display:block;
-        letter-spacing:10px;
 
         &.animated {
             animation: showText 0.6s cubic-bezier(.16,.9,.76,.91) forwards;
@@ -160,6 +159,6 @@ a.site-logo {
 }
 
 @keyframes showText {
-    from {transform:translateX(100%); letter-spacing:10px}
-    to {transform:translateX(0); letter-spacing: 0;}
+    from {transform:translateX(100%)}
+    to {transform:translateX(0)}
 }
