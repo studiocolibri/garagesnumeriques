@@ -1,35 +1,30 @@
 window.onload = function() {
-  // VIDEO BG
-  /*var min = 1,
-        max = 5,
-        random = Math.floor(Math.random() * (+max - +min)) + +min; */
-    
-  var videlem = document.createElement("video"),
-      sourceMP4 = document.createElement("source"),
-      supportsVideoElement = !!document.createElement('video').canPlayType,
-      temp = document.createElement('video'),
-      canPlay_MP4 = temp.canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),
-      //canPlay_WEMB = temp.canPlayType('video/webm; codecs="vp8,vorbis"'),
-      videoWrapper = document.getElementById('video-wrapper');
-  
-  if (supportsVideoElement && canPlay_MP4) {
-    videlem.id = "video-bg";    
-    sourceMP4.type = "video/mp4";
-    sourceMP4.src = "/assets/videos/garages-numeriques-homepage-loop.mp4";
-    videlem.appendChild(sourceMP4);
-    videlem.preload = true;
-    videlem.autoplay = true;
-    videlem.muted = true;
-    videlem.loop = true;
-    videlem.setAttribute('playsinline', '');
-    videoWrapper.appendChild(videlem);
-    videlem.onloadeddata = function() {
-      logoAnim(launchGlitch);
-    }; 
-  } else {
-    logoAnim(launchGlitch);
 
+  // VIDEO BG
+  var launchVideo = function() {
+    var videlem = document.createElement("video"),
+    sourceMP4 = document.createElement("source"),
+    supportsVideoElement = !!document.createElement('video').canPlayType,
+    temp = document.createElement('video'),
+    canPlay_MP4 = temp.canPlayType('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'),
+    //canPlay_WEMB = temp.canPlayType('video/webm; codecs="vp8,vorbis"'),
+    videoWrapper = document.getElementById('video-wrapper');
+
+    if (supportsVideoElement && canPlay_MP4) {
+      videlem.id = "video-bg";    
+      sourceMP4.type = "video/mp4";
+      sourceMP4.src = "/assets/videos/garages-numeriques-homepage-loop.mp4";
+      videlem.appendChild(sourceMP4);
+      videlem.preload = true;
+      videlem.autoplay = true;
+      videlem.muted = true;
+      videlem.loop = true;
+      videlem.setAttribute('playsinline', '');
+      videoWrapper.appendChild(videlem);
+      console.log('launchvideo');
+    }
   }
+  
 
   // LOGO ANIM
   var logoAnim = function(callback) {
@@ -45,24 +40,27 @@ window.onload = function() {
       siteLogoBars[i].classList.add('animated');
     }
 
-    sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
-    sixthBar.addEventListener("animationend", launchBlueBar); 
-
     function launchBlueBar() {
       if (!isFirstAnimTerminated) {
         sixthBar.classList.add('bluebar');
       }
     }
 
+    sixthBar.addEventListener("webkitAnimationEnd", launchBlueBar);
+    sixthBar.addEventListener("animationend", launchBlueBar); 
+
     setTimeout( function(){
       callback();
+      console.log('Logoanim');
     }, 3000 );
   }
 
   // GLITCH
-  function launchGlitch() {
+  function launchGlitch(callback) {
     var homeTitle = document.getElementById('home-title__h1');
     homeTitle.classList.add('glitch');
+    return callback;
+    console.log('launchGlitch');
   }
 
   // AGENDA
@@ -89,4 +87,7 @@ window.onload = function() {
       document.body.classList.remove('no-scroll');
     }
   }
+
+  // INIT 
+  logoAnim(launchGlitch(launchVideo()));
 }
