@@ -1,4 +1,36 @@
 ---
 label: Artists
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: description
+- name: photo
+  type: file
+  config:
+    maxSize: 250
+  label: photo
+- name: date
+  type: datetime
+  label: date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: true
+    export_format: DD hh:mm
+- name: featured
+  type: boolean
+  label: featured
