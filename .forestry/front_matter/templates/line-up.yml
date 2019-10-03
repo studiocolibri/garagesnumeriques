@@ -26,3 +26,5 @@ fields:
       required: false
     label: name
   label: artistname
+pages:
+- content/Shackleton.md
