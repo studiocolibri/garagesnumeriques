@@ -1,4 +1,9 @@
 ---
 label: Line-Up
 hide_body: false
-fields: []
+fields:
+- name: artist
+  type: include
+  config: {}
+  template: artists
+  label: artist
