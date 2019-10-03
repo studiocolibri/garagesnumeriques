@@ -34,3 +34,20 @@ fields:
 - name: featured
   type: boolean
   label: featured
+- name: day
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - Thursday 7
+    - Friday 8
+    - Saturday 9
+    - Sun 10
+    - Mon 11
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: day
