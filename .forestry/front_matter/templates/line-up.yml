@@ -2,10 +2,29 @@
 label: Line-Up
 hide_body: false
 fields:
-- name: artist
-  type: include
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
+- name: artistname
+  type: field_group
   config: {}
-  template: artists
-  label: artist
+  fields:
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: description
+  - name: name
+    type: text
+    config:
+      required: false
+    label: name
+  label: artistname
 pages:
 - content/artist1.md
