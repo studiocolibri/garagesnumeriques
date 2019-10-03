@@ -1,4 +1,16 @@
 ---
 label: testartist
 hide_body: false
-fields: []
+fields:
+- name: artiqrt1
+  type: blocks
+  label: artiqrt1
+  template_types: []
+  config:
+    min: 
+    max: 
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
